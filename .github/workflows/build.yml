@@ -30,17 +30,13 @@ jobs:
 
       - name: Fix launcher icons
         run: |
-          # Remove adaptive XML icons from density folders
           for dir in mipmap-hdpi mipmap-mdpi mipmap-xhdpi mipmap-xxhdpi mipmap-xxxhdpi; do
             rm -f app/src/main/res/$dir/ic_launcher.xml
             rm -f app/src/main/res/$dir/ic_launcher_round.xml
           done
-
-          # Generate simple PNG icons
           python3 - << 'PYEOF'
           from PIL import Image, ImageDraw
           import os
-
           sizes = {
               'mipmap-mdpi': 48,
               'mipmap-hdpi': 72,
@@ -48,7 +44,6 @@ jobs:
               'mipmap-xxhdpi': 144,
               'mipmap-xxxhdpi': 192,
           }
-
           for folder, size in sizes.items():
               path = f'app/src/main/res/{folder}'
               os.makedirs(path, exist_ok=True)
@@ -63,14 +58,19 @@ jobs:
               print(f'Created {size}x{size} icon in {folder}')
           PYEOF
 
-      - name: Make gradlew executable
-        run: chmod +x gradlew
-
-      - name: Download Gradle wrapper jar
+      - name: Setup Gradle wrapper
         run: |
           mkdir -p gradle/wrapper
           curl -o gradle/wrapper/gradle-wrapper.jar \
             https://raw.githubusercontent.com/gradle/gradle/v8.1.1/gradle/wrapper/gradle-wrapper.jar
+          cat > gradle/wrapper/gradle-wrapper.properties << 'EOF'
+          distributionBase=GRADLE_USER_HOME
+          distributionPath=wrapper/dists
+          zipStoreBase=GRADLE_USER_HOME
+          zipStorePath=wrapper/dists
+          distributionUrl=https\://services.gradle.org/distributions/gradle-8.1.1-bin.zip
+          EOF
+          chmod +x gradlew
 
       - name: Build Debug APK
         run: ./gradlew assembleDebug

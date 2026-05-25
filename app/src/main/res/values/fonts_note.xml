@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    FONT SETUP INSTRUCTIONS:
+    Download these fonts from Google Fonts and place in res/font/:
+    
+    1. Lora Italic       -> lora_italic.ttf
+       https://fonts.google.com/specimen/Lora
+    
+    2. Montserrat SemiBold -> montserrat_semibold.ttf
+       https://fonts.google.com/specimen/Montserrat
+    
+    3. Montserrat Bold   -> montserrat_bold.ttf
+       https://fonts.google.com/specimen/Montserrat
+    
+    OR use the automated download script provided in SETUP_GUIDE.md
+-->
+<resources>
+    <string name="font_note">Place font .ttf files in app/src/main/res/font/ directory</string>
+</resources>

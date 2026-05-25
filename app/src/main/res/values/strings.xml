@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Daily Motivation</string>
+    <string name="widget_label">Daily Quote Widget</string>
+    <string name="action_favorites">Favorites</string>
+    <string name="action_settings">Settings</string>
+    <string name="btn_new_quote">New Quote</string>
+    <string name="btn_share">Share</string>
+    <string name="btn_copy">Copy</string>
+    <string name="btn_favorite">Favorite</string>
+    <string name="empty_favorites">No favorites yet.\nTap ❤️ on a quote to save it!</string>
+    <string name="notification_title">Daily Motivation ✨</string>
+</resources>

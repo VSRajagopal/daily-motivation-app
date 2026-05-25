@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark theme palette -->
+    <color name="bg_primary">#0D0D1A</color>
+    <color name="bg_surface">#161625</color>
+    <color name="card_bg">#1E1E30</color>
+    <color name="text_primary">#F0EEE6</color>
+    <color name="text_secondary">#8A8AA0</color>
+    <color name="accent_gold">#D4AF6A</color>
+    <color name="accent_gold_dark">#A07840</color>
+
+    <!-- Status bar -->
+    <color name="colorPrimary">#161625</color>
+    <color name="colorPrimaryDark">#0D0D1A</color>
+    <color name="colorAccent">#D4AF6A</color>
+</resources>

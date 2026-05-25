@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            app:titleTextColor="@color/text_primary" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:minHeight="600dp"
+            android:padding="24dp">
+
+            <!-- Header Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TODAY'S QUOTE"
+                android:textColor="@color/accent_gold"
+                android:textSize="11sp"
+                android:letterSpacing="0.2"
+                android:fontFamily="@font/montserrat_bold"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Quote Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardQuote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/card_bg"
+                app:cardElevation="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="28dp">
+
+                    <!-- Quote mark decorative -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="❝"
+                        android:textSize="40sp"
+                        android:textColor="@color/accent_gold"
+                        android:alpha="0.6"
+                        android:layout_marginBottom="8dp" />
+
+                    <!-- Quote Text -->
+                    <TextView
+                        android:id="@+id/tvQuote"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_primary"
+                        android:textSize="20sp"
+                        android:lineSpacingMultiplier="1.5"
+                        android:fontFamily="@font/lora_italic"
+                        android:layout_marginBottom="20dp" />
+
+                    <!-- Divider -->
+                    <View
+                        android:layout_width="40dp"
+                        android:layout_height="2dp"
+                        android:background="@color/accent_gold"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Author -->
+                    <TextView
+                        android:id="@+id/tvAuthor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Category Chip -->
+                    <TextView
+                        android:id="@+id/tvCategory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/accent_gold"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:letterSpacing="0.15"
+                        android:background="@drawable/bg_category_chip"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="5dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Action Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="28dp">
+
+                <!-- Favorite -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/btnFavorite"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/bg_action_button"
+                        android:src="@drawable/ic_favorite_outline"
+                        android:contentDescription="Favorite"
+                        android:padding="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Favorite"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+
+                <!-- Share -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/btnShare"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/bg_action_button"
+                        android:src="@drawable/ic_share"
+                        android:contentDescription="Share"
+                        android:padding="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Share"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+
+                <!-- Copy -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/btnCopy"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/bg_action_button"
+                        android:src="@drawable/ic_copy"
+                        android:contentDescription="Copy"
+                        android:padding="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Copy"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+
+                <!-- New Quote -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/btnNew"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/bg_action_button_accent"
+                        android:src="@drawable/ic_refresh"
+                        android:contentDescription="New Quote"
+                        android:padding="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="New"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:layout_marginTop="6dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
